@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/admin/product")
 @RestController
 public class CategoryController {
-    //提交git
+    //提交git的令牌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
     @Autowired
     BaseCategory1Service baseCategory1Service;
     @Autowired
