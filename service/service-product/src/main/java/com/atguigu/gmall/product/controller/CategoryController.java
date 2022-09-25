@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/admin/product")
 @RestController
 public class CategoryController {
-
+    //提交git
     @Autowired
     BaseCategory1Service baseCategory1Service;
     @Autowired
