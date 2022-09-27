@@ -1,0 +1,25 @@
+{
+  "id": 11,
+  "attrName": "上市日期12",
+  "category1Id": 0,
+  "category2Id": 0,
+  "category3Id": 0,
+  "attrValueList": [
+    {
+      "id": 59,
+      "valueName": "2019",
+      "attrId": 11
+    },
+    {
+      "id": 60,
+      "valueName": "2020",
+      "attrId": 11
+    },
+    {
+      "valueName": "2023",
+      "edit": false
+    }
+  ],
+  "categoryId": 2,
+  "categoryLevel": 1
+}
