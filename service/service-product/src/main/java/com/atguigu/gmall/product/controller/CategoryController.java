@@ -3,8 +3,10 @@ package com.atguigu.gmall.product.controller;
 import com.atguigu.gmall.common.result.Result;
 import com.atguigu.gmall.model.product.BaseCategory1;
 import com.atguigu.gmall.model.product.BaseCategory2;
+import com.atguigu.gmall.model.product.BaseCategory3;
 import com.atguigu.gmall.product.service.BaseCategory1Service;
 import com.atguigu.gmall.product.service.BaseCategory2Service;
+import com.atguigu.gmall.product.service.BaseCategory3Service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.R;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,8 @@ public class CategoryController {
     @Autowired
     BaseCategory2Service baseCategory2Service;
 
+    @Autowired
+    BaseCategory3Service baseCategory3Service;
     /**
      * 获取所有的一级分类 admin/product/getCategory1
      * @return
@@ -30,7 +34,7 @@ public class CategoryController {
     @GetMapping("getCategory1")
     public Result getCategory1(){
 
-        //TODO 查询所有的一级分类
+        //查询所有的一级分类
         List<BaseCategory1> list = baseCategory1Service.list(null);
 
         return Result.ok(list);
@@ -49,7 +53,18 @@ public class CategoryController {
         return Result.ok(list);
     }
 
+    /**
+     * 获取某个二级分类下的三级分类
+     * @param c2Id  一级分类id
+     * @return
+     */
+    @GetMapping("getCategory3/{category2Id}")
+    public Result getCategory3(@PathVariable("category2Id") Long c2Id ){
 
+        List<BaseCategory3> list=baseCategory3Service.getCategory2Child(c2Id);
+
+        return Result.ok(list);
+    }
 
 
 
