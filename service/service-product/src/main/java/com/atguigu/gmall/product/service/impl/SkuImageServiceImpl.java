@@ -24,6 +24,8 @@ public class SkuImageServiceImpl extends ServiceImpl<SkuImageMapper, SkuImage>
     @Autowired
     SpuImageMapper spuImageMapper;
 
+    @Autowired
+    SkuImageMapper skuImageMapper;
     @Override
     public List<SpuImage> spuImageList(Long spuId) {
         QueryWrapper<SpuImage> queryWrapper = new QueryWrapper<>();
@@ -31,6 +33,15 @@ public class SkuImageServiceImpl extends ServiceImpl<SkuImageMapper, SkuImage>
         List<SpuImage> imageList = spuImageMapper.selectList(queryWrapper);
         return imageList;
 
+    }
+
+    @Override
+    public List<SkuImage> getSkuImages(Long skuId) {
+        QueryWrapper<SkuImage> wrapper = new QueryWrapper<>();
+        wrapper.eq("sku_id", skuId);
+        List<SkuImage> imageList = skuImageMapper.selectList(wrapper);
+
+        return imageList;
     }
 }
 

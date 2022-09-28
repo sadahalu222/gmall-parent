@@ -13,4 +13,6 @@ import java.util.List;
 public interface SkuImageService extends IService<SkuImage> {
 
     List<SpuImage> spuImageList(Long spuId);
+
+    List<SkuImage> getSkuImages(Long skuId);
 }

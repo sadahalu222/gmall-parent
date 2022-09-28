@@ -1,5 +1,6 @@
 package com.atguigu.gmall.product;
 
+import com.atguigu.gmall.common.config.Swagger2Config;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
@@ -7,7 +8,11 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+@EnableTransactionManagement
+@Import(Swagger2Config.class)
 @MapperScan(basePackages = "com.atguigu.gmall.product.mapper")
 @SpringCloudApplication
 public class ProductMainApplication {
