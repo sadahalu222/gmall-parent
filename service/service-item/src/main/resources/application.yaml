@@ -1,0 +1,28 @@
+server:
+  port: 8000
+
+spring:
+  zipkin:
+    base-url: http://192.168.6.102:9411/
+    sender:
+      type: web
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  redis:
+    host: 192.168.6.102
+    password: Lfy123456
+app:
+  thread-pool:
+    core: 4
+    max: 8
+    queue-size: 2000
+    keep-alive-time: 300 #单位秒
+
+
+#暴露所有监控端点
+#暴露所有监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
