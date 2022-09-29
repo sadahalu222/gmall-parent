@@ -1,5 +1,6 @@
 package com.atguigu.gmall.product;
 
+import com.atguigu.gmall.common.annotation.EnableThreadPool;
 import com.atguigu.gmall.common.config.Swagger2Config;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
@@ -15,6 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Import(Swagger2Config.class)
 @MapperScan(basePackages = "com.atguigu.gmall.product.mapper")
 @SpringCloudApplication
+@EnableThreadPool
 public class ProductMainApplication {
     public static void main(String[] args) {
         SpringApplication.run(ProductMainApplication.class, args);

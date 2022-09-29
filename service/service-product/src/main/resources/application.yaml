@@ -19,3 +19,9 @@ app:
     ak: admin
     sk: admin123456
     bucketName: gmall
+
+  thread-pool:
+    core: 4
+    max: 8
+    queue-size: 2000
+    keep-alive-time: 300 #单位秒
