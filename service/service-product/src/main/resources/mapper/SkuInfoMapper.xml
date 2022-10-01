@@ -23,4 +23,7 @@
         tm_id,category3_id,sku_default_img,
         is_sale
     </sql>
+    <select id="getAllSkuId" resultType="java.lang.Long">
+        select id from sku_info;
+    </select>
 </mapper>
