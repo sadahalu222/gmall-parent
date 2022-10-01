@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"com.atguigu.gmall.feign.product"})
 @SpringCloudApplication
 @EnableThreadPool
 public class ItemMainApplication {

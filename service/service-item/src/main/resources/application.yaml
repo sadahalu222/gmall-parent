@@ -8,9 +8,9 @@ spring:
       type: web
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-  redis:
-    host: 192.168.6.102
-    password: Lfy123456
+  main:
+    allow-bean-definition-overriding: true
+
 app:
   thread-pool:
     core: 4

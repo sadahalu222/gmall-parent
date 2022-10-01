@@ -4,10 +4,10 @@ server:
 spring:
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-  zipkin:
-    base-url: http://192.168.6.102:9411/
-    sender:
-      type: web
+
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
+  main:
+    allow-bean-definition-overriding: true
+
