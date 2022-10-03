@@ -15,6 +15,7 @@ public enum ResultCodeEnum {
 
     PAY_RUN(205, "支付中"),
 
+    LOGIN_ERROR(2081,"账号密码错误"),
     LOGIN_AUTH(208, "未登陆"),
     PERMISSION(209, "没有权限"),
     SECKILL_NO_START(210, "秒杀还没开始"),
