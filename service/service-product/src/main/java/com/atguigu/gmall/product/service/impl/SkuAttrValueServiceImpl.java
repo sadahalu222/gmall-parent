@@ -1,5 +1,6 @@
 package com.atguigu.gmall.product.service.impl;
 
+import com.atguigu.gmall.model.list.SearchAttr;
 import com.atguigu.gmall.model.product.SkuAttrValue;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 

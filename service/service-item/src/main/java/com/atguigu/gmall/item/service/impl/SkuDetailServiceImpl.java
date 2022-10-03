@@ -5,6 +5,7 @@ import com.atguigu.gmall.common.result.Result;
 
 import com.atguigu.gmall.feign.product.SkuProductFeignClient;
 
+import com.atguigu.gmall.feign.search.SearchFeignClient;
 import com.atguigu.gmall.item.service.SkuDetailService;
 import com.atguigu.gmall.model.product.SkuImage;
 import com.atguigu.gmall.model.product.SkuInfo;
@@ -37,6 +38,9 @@ public class SkuDetailServiceImpl implements SkuDetailService {
     @Autowired
     CacheOpsService cacheOpsService;
 
+    @Autowired
+    SearchFeignClient searchFeignClient;
+
     /**
      * //表达式中params代表方法的所有参数列表
      * @param skuId
@@ -56,9 +60,17 @@ public class SkuDetailServiceImpl implements SkuDetailService {
         return fromRpc;
     }
 
+    @Override
+    public void updateHotScore(Long skuId) {
+        //redis统计得分
+        Long increment = redisTemplate.opsForValue().increment(SysRedisConst.SKU_HOTSCORE_PREFIX + skuId);
 
+        if (increment%100==0){
+            //累计到一定量时更新es
+            searchFeignClient.updateHotScore(skuId,increment);
+        }
 
-
+    }
 
 
     //每个skuId,关联一把自己的锁
