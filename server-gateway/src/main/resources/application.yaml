@@ -34,3 +34,19 @@ spring:
           uri: lb://web-all
           predicates: #断言
             - Host=**.gmall.com
+
+
+app:
+  auth:
+    no-auth-url: #任意人无需登入都能访问的路径
+      - /css/**
+      - /js/**
+      - /img/**
+      - /login.html
+      - /api/user/passport/login
+    login-auth-url: #登入后才能访问的资源
+      - /order/**
+    login-page: http://passport.gmall.com/login.html
+
+    deny-url:
+      - /api/inner/**
