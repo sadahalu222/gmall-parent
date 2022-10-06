@@ -29,7 +29,9 @@ public enum ResultCodeEnum {
     SECKILL_ORDER_SUCCESS(218, "下单成功"),
     COUPON_GET(220, "优惠券已经领取"),
     COUPON_LIMIT_GET(221, "优惠券已发放完毕"),
+    CART_OVARFLOW(2222,"购物车商品数量过大")
     ;
+
 
     private Integer code;
 

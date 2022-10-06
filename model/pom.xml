@@ -23,7 +23,11 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <scope>provided </scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.atguigu.gmall</groupId>
+            <artifactId>common-util</artifactId>
+            <version>1.0</version>
+        </dependency>
         <!--swagger 也是一样的 目标环境已提供 类上面要标一些注解-->
         <dependency>
             <groupId>io.springfox</groupId>

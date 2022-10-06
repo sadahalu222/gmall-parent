@@ -36,6 +36,8 @@ public class PaymentInfo extends BaseEntity {
 	@ApiModelProperty(value = "支付类型（微信 支付宝）")
 	@TableField("payment_type")
 	private String paymentType;
+	@TableField("user_id")
+	private Long userId;
 
 	@ApiModelProperty(value = "交易编号")
 	@TableField("trade_no")
