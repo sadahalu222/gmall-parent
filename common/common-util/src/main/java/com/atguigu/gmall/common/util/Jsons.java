@@ -3,6 +3,7 @@ package com.atguigu.gmall.common.util;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.amqp.core.Message;
 import org.springframework.util.StringUtils;
 
 import java.util.Map;
@@ -61,4 +62,15 @@ public class Jsons {
 
     }
 
+    /**
+     * 把mq消息内容转成指定对象
+     * @param message
+     * @param orderMsgClass
+     * @param <T>
+     * @return
+     */
+    public static <T> T toObj(Message message, Class<T> orderMsgClass) {
+        String json = new String(message.getBody());
+        return toObj(json, orderMsgClass);
+    }
 }
