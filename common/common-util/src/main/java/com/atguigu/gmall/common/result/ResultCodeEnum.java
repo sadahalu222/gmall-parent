@@ -31,8 +31,10 @@ public enum ResultCodeEnum {
     COUPON_LIMIT_GET(221, "优惠券已发放完毕"),
     CART_OVARFLOW(2222,"购物车商品数量过大"),
     ORDER_PRICE_CHANGE(2220,"购物车商品数量过大"),
-    TOKEN_INVAILD(2223,"令牌过期 刷新页面")
+    TOKEN_INVAILD(2223,"令牌过期 刷新页面"),
+    ORDER_EXPIRED(2227,"订单已过期")
     ;
+
 
 
     private Integer code;

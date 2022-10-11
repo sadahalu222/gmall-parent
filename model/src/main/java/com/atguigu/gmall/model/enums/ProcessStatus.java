@@ -10,6 +10,9 @@ public enum ProcessStatus {
     CLOSED("已关闭", OrderStatus.CLOSED),
     FINISHED("已完结", OrderStatus.FINISHED) ,
     PAY_FAIL("支付失败", OrderStatus.UNPAID),
+    STOCK_OVER_EXCEPTION("超出库存异常", OrderStatus.WAITING_SCHEDULE),
+
+
     SPLIT("订单已拆分", OrderStatus.SPLIT);
 
     private String comment ;
