@@ -40,4 +40,10 @@ public interface OrderInfoService extends IService<OrderInfo> {
     //根据对外交易号和用户id获取订单信息
     OrderInfo getOrderInfoByOutTradeNoAndUserId(String outTradeNo, Long userId);
 
+    /**
+     * 提交秒杀单
+     * @param info
+     * @return
+     */
+    Long submitSeckillOrder(OrderInfo info);
 }

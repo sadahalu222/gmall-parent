@@ -77,7 +77,8 @@ public class OrderPayedListener {
 
             //通知库存系统，扣减库存
             WareDeduceMsg msg = prepareWareDeduceMsg(info);
-            rabbitTemplate.convertAndSend(MqConst.EXCHANGE_WARE_EVENT,
+            rabbitTemplate
+                    .convertAndSend(MqConst.EXCHANGE_WARE_EVENT,
                     MqConst.RK_WARE_DEDUCE,Jsons.toStr(msg));
             channel.basicAck(tag,false);
         }catch (Exception e){

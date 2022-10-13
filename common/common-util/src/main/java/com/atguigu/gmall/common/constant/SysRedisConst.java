@@ -19,4 +19,8 @@ public class SysRedisConst {
     public static final Integer ORDER_CLOSE_TTL=60*45;//秒为单位
     public static final long ORDER_REFUND_TTL = 60*60*24*30;
     public static final String MQ_RETRY ="mq:message:" ;
+    public static final String CACHE_SECKILL_GOODS = "seckill:goods:";
+    public static final String CACHE_SECKILL_GOODS_STOCK = "seckill:goods:stock:";
+    public static final String SECKILL_CODE ="seckill:code:" ;
+    public static final String SECKILL_ORDER = "seckill:goods:order:";
 }

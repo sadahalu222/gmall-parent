@@ -252,7 +252,9 @@ public class GwareServiceImpl implements GwareService {
         Map<String, Object> map = new HashMap<>();
         map.put("orderId", wareOrderTask.getOrderId());
         map.put("status", wareOrderTask.getTaskStatus().toString());
-        this.sendMessage(MqConst.EXCHANGE_DIRECT_WARE_ORDER, MqConst.ROUTING_WARE_ORDER, JSON.toJSONString(map));
+        this.sendMessage(
+                MqConst.EXCHANGE_DIRECT_WARE_ORDER,
+                MqConst.ROUTING_WARE_ORDER, JSON.toJSONString(map));
     }
 
     @Transactional
